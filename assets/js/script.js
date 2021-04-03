@@ -12,12 +12,11 @@ function writePassword() {
 }
 function generatePassword() {
     var length = Number(prompt("How long would you like your password to be?"));
-    var placeHold = "";
-    
+
     var letters = confirm("Do you want letters in your password?");
     var letterCharset = "abcdefghijklmnopqrstuvwxyz";
     var letterLength = letterCharset.length;
-    
+    var placeHold = "";
 
     var numbers = confirm("Do you want numbers in your password?");
     var numbCharset = "123456789";
@@ -31,8 +30,8 @@ function generatePassword() {
             alert("The password must be between 8 and 128 characters.")
         }
 
+    if (letters &&! numbers &&! specChar) {
         for (var i = 0;  i < length; i++ ) {
-            if (letters &&! numbers &&! specChar) {
             placeHold += letterCharset.charAt(Math.floor(Math.random() * letterLength));
         } 
         return placeHold;
