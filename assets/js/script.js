@@ -40,9 +40,7 @@ function generatePassword() {
 
     var specChar = confirm("Do you want special characters in your password?");
     
-    if (length < 8 || length > 128) {
-            alert("The password must be between 8 and 128 characters.");
-        }
+   
         //ask about making the charsets into an array that can be refrenced as one object for .charAt
     if (lowercase &&! uppercase &&! numbers &&! specChar) {
         for (var i = 0, n = charsets.l.length; i < length; i++) {
@@ -108,6 +106,9 @@ function generatePassword() {
         alert("You must pick at least one option!");
         location.reload();
         } 
+        if (length < 8 || length > 128) {
+            alert("The password must be between 8 and 128 characters.");
+        }
 };
 console.log(passwordChar);
 // Add event listener to generate button
